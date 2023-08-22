@@ -51,8 +51,8 @@ python3 main.py false NN patternA.txt
 Below are some deployment results with various DLOs.
 
 <p align="center">
-<img src="figures/comparsionDLO.png" alt>
-<img src="figures/knotTying.png" alt>
+<img src="figures/comparsion.png" alt>
+<img src="figures/knot_case.png" alt>
 <br>
 <em> Fig. 2 Deployment results for various patterns and the application of DLO deployment in knot tying.</em>
 </p>
