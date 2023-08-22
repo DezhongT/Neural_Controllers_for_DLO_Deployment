@@ -12,13 +12,9 @@ This repository contains a numeric solver based on physically accurate simulatio
 
 The algorithm inputs the pattern's geometry and DLO's geometric and material parameters. We offer some examples under the pattern folder for tests.
 
-Below is a video example showcasing the deployment of a VPS rod on various substrates along ``A'' pattern.
+Below is a video showcasing different deployment results and its applications.
 
-<p align="center">
-<img src="figures/deploymentLetter.gif" alt>
-<br>
-<em> Deployment of a DLO along ``A'' pattern </em>
-</p>
+[![Watch the video](https://i.stack.imgur.com/Vp2cE.png)](https://youtu.be/vt5fpE0bzSY)
 
 ---
 
