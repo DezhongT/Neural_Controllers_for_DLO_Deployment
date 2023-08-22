@@ -14,7 +14,7 @@ The algorithm inputs the pattern's geometry and DLO's geometric and material par
 
 Below is a video showcasing different deployment results and its applications.
 
-[![Watch the video](https://i.stack.imgur.com/Vp2cE.png)](https://youtu.be/vt5fpE0bzSY)
+[![Watch the video](https://i.stack.imgur.com/Vp2cE.png)](https://www.youtube.com/watch?v=2tkmbd6oDPw)
 
 ---
 
