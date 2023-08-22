@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
 import numpy as np
 import math
-from planner.utils import visualizePatternAndTraj, designCirclePattern, \
-                          designCustomPattern, designStraightPattern, designCustomPatternLs,\
-                          computeSegLen, computeSegLen, computeTangent, computeCurvature, \
-                          convert2Matrix, computePatternTangent
+from planner.utils import visualizePatternAndTraj, computeSegLen, computeSegLen,\
+                          computeTangent, computeCurvature, convert2Matrix, computePatternTangent
 import time
 from scipy.spatial.transform import Rotation as R
 import os
@@ -125,10 +123,6 @@ if __name__ == "__main__":
     isInitial = sys.argv[1]
     solver = sys.argv[2]
     fileName = sys.argv[3]
-    if len(sys.argv) < 5:
-        theta = 0
-    else:
-        theta = sys.argv[4]
 
     # define parameters (one example)
     h = 1.6e-3 # rod radius
@@ -143,17 +137,8 @@ if __name__ == "__main__":
     kb = E*math.pi*h**4/4.0
 
     normks = Lgb**2 * ks/kb
-
-    # design a Letter
-    if fileName == "circle":
-        pattern = designCirclePattern(0.09, np.array([0, -1, 0]).reshape(1,3), 0.1)
-    elif fileName == "sine":
-        pattern = designCustomPattern("patterns/sin_curvature.txt", np.array([0.7824,  -0.6227,  0]).reshape(1,3))
-    elif fileName == "line":
-        pattern = designStraightPattern(0.5, np.array([0, -1, 0]).reshape(1,3))
-    else:
-        theta = float(theta) * np.pi/ 180
-        pattern = designCustomPatternLs(f"patterns/{fileName}", np.array([np.cos(theta), np.sin(theta),  0]).reshape(1,3))
+    # load pattern
+    pattern = np.loadtxt(f"patterns/{fileName}")
 
     pose = [0, 0, ls, 1, 0, 0, 0]
     print(isInitial)
@@ -164,7 +149,7 @@ if __name__ == "__main__":
         if solver == "NN":
             ## NN solver
             dp = DeploymentPlanner(Lgb, normks)
-            print(f"Begin simulation for {fileName}")
+            print(f"Begin planning for {fileName}")
             start_time = time.time()
             Pose = dp.optimalPath(ls, pose, pattern)
             end_time = time.time()
@@ -172,7 +157,7 @@ if __name__ == "__main__":
             print(f"Elapsed time: {elapsed_time} seconds")
         else:
             ## Numeric Solver
-            print(f"Begin simulation for {fileName}")
+            print(f"Begin planning for {fileName}")
             start_time = time.time()
             Pose = computeOptPathwithSim(ls, Lgb, normks, pose, pattern)
             end_time = time.time()
