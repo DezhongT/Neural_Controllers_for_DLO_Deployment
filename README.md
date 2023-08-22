@@ -12,13 +12,9 @@ This repository contains a numeric solver based on physically accurate simulatio
 
 The algorithm inputs the pattern's geometry and DLO's geometric and material parameters. We offer some examples under the pattern folder for tests.
 
-Below is a video example showcasing the deployment of a VPS rod on various substrates along ``A'' pattern.
+Below is a video showcasing different deployment results and its applications.
 
-<p align="center">
-<img src="figures/deploymentLetter.gif" alt>
-<br>
-<em> Deployment of a DLO along ``A'' pattern </em>
-</p>
+[![Watch the video](figures/coverImage.png)](https://www.youtube.com/watch?v=2tkmbd6oDPw)
 
 ---
 
@@ -51,8 +47,8 @@ python3 main.py false NN patternA.txt
 Below are some deployment results with various DLOs.
 
 <p align="center">
-<img src="figures/comparsionDLO.png" alt>
-<img src="figures/knotTying.png" alt>
+<img src="figures/comparison.png" alt>
+<img src="figures/Knot_case.png" alt>
 <br>
 <em> Fig. 2 Deployment results for various patterns and the application of DLO deployment in knot tying.</em>
 </p>
